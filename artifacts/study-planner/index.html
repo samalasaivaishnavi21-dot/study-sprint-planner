@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studyday — your study planner</title>
+    <meta name="description" content="A gentle place to plan your studies, keep track of tasks, and celebrate progress." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Study Planner" />
+    <meta property="og:description" content="A gentle place to plan your studies and celebrate progress." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Study Planner" />
+    <meta name="twitter:description" content="A gentle place to plan your studies and celebrate progress." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Studyday home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 27.5c6.2 0 10.2-2.7 12-8.2 1.8 5.5 5.8 8.2 12 8.2M20 19.3V9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M20 12.5c0-4.4 3.1-7 7.2-7-0.1 4.3-2.4 7-7.2 7Z" fill="currentColor"/></svg>
+          </span>
+          <span>studyday</span>
+        </a>
+        <span class="top-note"><span class="sun-dot" aria-hidden="true"></span> One step at a time</span>
+      </header>
+
+      <section class="welcome" aria-labelledby="page-title">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> YOUR STUDY SPACE</p>
+          <h1 id="page-title">Make room for<br /><span>good progress.</span></h1>
+          <p class="intro">A clear list makes starting easier.<br class="desktop-break" /> Add what’s on your mind, then take it one task at a time.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+          <div class="art-sun"></div>
+          <svg class="sprout" viewBox="0 0 150 165" fill="none">
+            <path d="M74 147c1-42 1-68 4-99" stroke="#3F7252" stroke-width="4" stroke-linecap="round"/>
+            <path d="M77 83c-38 2-53-14-49-43 30-1 49 12 49 43Z" fill="#6F9C72"/>
+            <path d="M79 64c4-34 21-49 49-43 0 29-16 44-49 43Z" fill="#A6BD83"/>
+            <path d="M31 40c21 7 34 20 44 40M124 25c-21 8-34 22-44 39" stroke="#E4E9D2" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M47 147h58" stroke="#B4AA85" stroke-width="4" stroke-linecap="round"/>
+            <path d="M56 147c1 10 8 14 20 14s19-4 20-14" fill="#D5A876"/>
+            <path d="M54 147h44" stroke="#9C6D4C" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="art-label">little by little</span>
+        </div>
+      </section>
+
+      <section class="planner" aria-label="Your study plan">
+        <div class="planner-heading">
+          <div>
+            <p class="section-kicker">TODAY'S FOCUS</p>
+            <h2>Your study list</h2>
+          </div>
+          <div class="progress-summary" aria-live="polite">
+            <span class="progress-number" data-testid="text-completed-count">0</span>
+            <span class="progress-divider">/</span>
+            <span class="progress-number total-number" data-testid="text-total-count">0</span>
+            <span class="progress-label">done</span>
+          </div>
+        </div>
+
+        <div class="progress-track" role="progressbar" aria-label="Tasks completed" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" data-testid="progress-tasks">
+          <span class="progress-fill"></span>
+        </div>
+
+        <form class="add-form" data-testid="form-add-task">
+          <label class="visually-hidden" for="task-input">Add a study task</label>
+          <span class="input-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <input id="task-input" name="task" type="text" maxlength="160" placeholder="What would you like to study?" autocomplete="off" data-testid="input-task-name" />
+          <button class="add-button" type="submit" data-testid="button-add-task">
+            <span>Add task</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <p class="form-message" data-testid="status-form-message" aria-live="polite"></p>
+
+        <div class="list-heading">
+          <h3>Up next</h3>
+          <span class="list-caption" data-testid="text-list-caption">A fresh page</span>
+        </div>
+        <ul class="task-list" data-testid="list-study-tasks" aria-label="Study tasks"></ul>
+        <div class="empty-state" data-testid="empty-state">
+          <div class="empty-illustration" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none"><path d="M16 17.5c0-2.5 2-4.5 4.5-4.5H53c2.2 0 4 1.8 4 4v37c0 2.2-1.8 4-4 4H20.5c-2.5 0-4.5-2-4.5-4.5v-36Z" fill="#F5F0E3" stroke="#C9D4BD" stroke-width="1.5"/><path d="M24 26h23M24 34h19M24 42h11" stroke="#9CB497" stroke-width="2.2" stroke-linecap="round"/><path d="M43 47.5 49 53l11-13" stroke="#4F805C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22v31c0 3.3 2.7 6 6 6" stroke="#D8C8A9" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Your page is open</h3>
+          <p>Add a study task above and give yourself a place to begin.</p>
+        </div>
+        <p class="storage-note" data-testid="status-storage" aria-live="polite"></p>
+      </section>
+
+      <footer class="footer-note">
+        <span class="footer-rule"></span>
+        <p>Small steps still move you forward.</p>
+        <span class="footer-rule"></span>
+      </footer>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
